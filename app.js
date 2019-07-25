@@ -26,7 +26,7 @@ const sessionstorage = require('sessionstorage');
 
 //mongoose 구동을 위한 패키지
 const mongoose = require('mongoose');
-const databaseurl = 'mongodb://sangeonpark:hang0513@ds249017.mlab.com:49017/heroku_9qww56hv'
+const databaseurl = 'mongodb://sangeonpark:hang0513@ds355357.mlab.com:55357/heroku_rk5k8qv1'
 //const databaseurl = 'mongodb://localhost:27017/Thw2modimodi';
 //const databaseurl = 'mongodb://https://git.heroku.com/sangeonpark.git'
 console.log('connecting to the database!');
@@ -271,15 +271,15 @@ app.use('*', (req, res ) => {
 
 
 //서버 생성
-// http.createServer(app).listen(process.env.PORT||app.get('port'),function(){
-//     console.log('at least you upload in right ')
-//     console.log('Express server is activated Port : ',app.get('port'))
-// })
-//서버 생성(기존의 로컬을 이용한 연결 방법)
-http.createServer(app).listen(app.get('port'),function(){
+http.createServer(app).listen(process.env.PORT||app.get('port'),function(){
     console.log('at least you upload in right ')
     console.log('Express server is activated Port : ',app.get('port'))
 })
+//서버 생성(기존의 로컬을 이용한 연결 방법)
+// http.createServer(app).listen(app.get('port'),function(){
+//     console.log('at least you upload in right ')
+//     console.log('Express server is activated Port : ',app.get('port'))
+// })
 //데이터베이스 닫기
 console.log("closing database");
 database.on('close',function(){
