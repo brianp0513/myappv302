@@ -105,9 +105,9 @@ passport.use('local-login', new LocalStrategy({
 
 
 passport.use('naver', new NaverStrategy({
-    clientID : 'LcjFtyxQo_IDm2x_THBO',
-    clientSecret : 'TLmU0KZOkh',
-    callbackURL : 'https://myappv202.herokuapp.com/naver_oauth'
+    clientID : 'R1WwhE_9ujx4CwD5e9la',
+    clientSecret : '5gH6BT9VEY',
+    callbackURL : 'https://myappv302.herokuapp.com/naver_oauth'
 }, (accessToken, refreshToken, profile, done)=>{
     console.log(profile);//가지고온 네이버 회원 정보 display
 
@@ -163,9 +163,9 @@ passport.use('naver', new NaverStrategy({
 }))
 //==============================구글 passport 설정=======================================
 passport.use('google', new GoogleStrategy({
-    clientID : '917240113678-iclsglbj3rhqa26o3ln8hi87jr6jj0oi.apps.googleusercontent.com',
-    clientSecret : 'CIPIq9EldT669j40L7ChRxqN',
-    callbackURL : 'https://myappv202.herokuapp.com/google_oauth'
+    clientID : '1096797511996-f9jumdmj9eph0u5pe9r7fghvim0idgal.apps.googleusercontent.com',
+    clientSecret : 'CE24O97Bkav-NXC4d86gvPjd',
+    callbackURL : 'https://myappv302.herokuapp.com/google_oauth'
 },  (accessToken, refreshToken, profile, done)=>{
     console.log(profile);
     localstorage.setItem("sns",profile.provider);
@@ -213,9 +213,9 @@ passport.use('google', new GoogleStrategy({
 }));
 //=======================================페이스북 passport설정==============================================
 passport.use('facebook', new FacebookStrategy({
-    clientID : '364089517625336',
-    clientSecret : '1b993ff60379a741daf9b6e04013721d',
-    callbackURL : 'https://myappv202.herokuapp.com/facebook_oauth'
+    clientID : '467066980541156',
+    clientSecret : '1b58c2b438d6b167c71985b7d6b3ed0b',
+    callbackURL : 'https://myappv302.herokuapp.com/facebook_oauth'
 },  (accessToken, refreshToken, profile, done)=>{
     console.log('this is profile',profile);
     localstorage.setItem("sns",profile.provider);
