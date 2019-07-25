@@ -115,9 +115,9 @@ passport.use('naver', new NaverStrategy({
     const FN = fullname.substring(0,1);//성만 따오기
     const LN = fullname.substring(1,3);//이름만 따오기
     //user.js에 필요한 최소한의 정보를 sessionStorage에 저장
-    localstorage.setItem("sns",profile.provider);
-    localstorage.setItem("CID",profile.id);
-    localstorage.setItem("email",profile._json.email);
+    sessionstorage.setItem("sns",profile.provider);
+    sessionstorage.setItem("CID",profile.id);
+    sessionstorage.setItem("email",profile._json.email);
     
     userModel.findOne({sns : profile.provider,CID : profile.id},(err,user)=>{
         if(err){return done(err);}
@@ -168,9 +168,9 @@ passport.use('google', new GoogleStrategy({
     callbackURL : 'https://myappv302.herokuapp.com/google_oauth'
 },  (accessToken, refreshToken, profile, done)=>{
     console.log(profile);
-    localstorage.setItem("sns",profile.provider);
-    localstorage.setItem("CID",profile.id);
-    localstorage.setItem("email",profile._json.email);
+    sessionstorage.setItem("sns",profile.provider);
+    sessionstorage.setItem("CID",profile.id);
+    sessionstorage.setItem("email",profile._json.email);
     userModel.findOne({sns : profile.provider,CID : profile.id},(err,user)=>{
         if(err){return done(err);}
         if(!user){//해당 연동 계정이 없으면 내 웹사이트 DB에 없으면 새로 계정을 연동 계정을 이용하여 만든다.
@@ -218,9 +218,9 @@ passport.use('facebook', new FacebookStrategy({
     callbackURL : 'https://myappv302.herokuapp.com/facebook_oauth'
 },  (accessToken, refreshToken, profile, done)=>{
     console.log('this is profile',profile);
-    localstorage.setItem("sns",profile.provider);
-    localstorage.setItem("CID",profile.id);
-    localstorage.setItem("email",profile.id);
+    sessionstorage.setItem("sns",profile.provider);
+    sessionstorage.setItem("CID",profile.id);
+    sessionstorage.setItem("email",profile.id);
     userModel.findOne({sns : profile.provider,CID : profile.id},(err,user)=>{
         if(err){return done(err);}
         if(!user){//해당 연동 계정이 없으면 내 웹사이트 DB에 없으면 새로 계정을 연동 계정을 이용하여 만든다.
