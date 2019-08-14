@@ -15,6 +15,18 @@ body{
     background-color: rgba(0,0,0,0.70);
 }
 
+.rgba-blue-grey-slight{
+    background-color: rgba(96, 125, 139, 0.1);
+}
+
+.rgba-blue-grey-light{
+    background-color: rgba(96, 125, 139, 0.35);
+}
+
+.rgba-blue-grey-strong{
+    background-color: rgba(96, 125, 139, 0.7);
+}
+
 .shadow-xl{
     box-shadow: 0 1rem 2.5rem -0 8rem rgba(0, 0, 0, 0.56), 0 0.25rem 1.5rem rgba(0, 0, 0, 0.12), 0 0.5rem 0.75rem -0.3rem rgba(0, 0, 0, 0.2);
 }
@@ -178,10 +190,10 @@ footer.footer{
 }
 /* Jumbotron */
 .jumbotron{
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-origin: border-box;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    background-size: cover !important;
+    background-origin: border-box !important;
 }
 .intro .jumbotron {
     background: url('../images/bg_universe.jpg');
@@ -189,6 +201,11 @@ footer.footer{
 .page .jumbotron,.login .jumbotron {
     background: url('../images/img1.jpg');
 }
+
+.blog .jumbotron {
+    background: url('../images/img2.jpg');
+}
+
 /* Brand History */
 #brand-history{
     background: url('../images/brand.jpg');
@@ -240,7 +257,38 @@ footer.footer{
 .main-raised-rounded{
     border-radius: 6px;
 }
+/* Aside Styles */
+.page-list .card-body{
+    border-radius : 0.25rem 0.25rem 0 0;
+    display: block;
+}
+
+.widget-group{
+    background-color: rgba(0, 0, 0, 0.35);
+}
+.widget-group:hover{
+    transition: 0.5s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
 /* login content */
 .login .jumbotron.section-content.container .card-body{
     justify-content: center;
+}
+/* communicate box */
+.communicate-box {
+    background-color: rgba(96, 125, 139, 0.35);
+    border-radius : 5px;
+    transition: 0.5s ease-in-out;
+}
+
+.communicate-box:hover{
+    background-color: rgba(96, 125, 139, 0.7);
+}
+/* Blog */
+#optin{
+    background-color: #004d40;
+}
+.blog-card{
+    margin-bottom: 1.5rem;
 }
